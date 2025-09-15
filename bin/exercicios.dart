@@ -6,7 +6,8 @@ void main() {
   //dobro();
   //mediIdade();
   //ficha();
-  saldoAtual();
+  //saldoAtual();
+  cupons();
 }
 
 void dobro() {
@@ -68,3 +69,9 @@ void retiradaDePontos() {
   print("Você resgatou $pontosRetirados pontos. Pontos restantes: $pontosRestantes.");
 }
 
+void cupons() {
+  print("Digite o valor total da compra: ");
+  double valorCompra = double.parse(stdin.readLineSync()!);
+  int cupons = valorCompra ~/ 50;
+  print("Você ganhou $cupons cupom(s).");
+}
