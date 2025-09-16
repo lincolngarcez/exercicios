@@ -7,7 +7,103 @@ void main() {
   //mediIdade();
   //ficha();
   //saldoAtual();
-  cupons();
+  //cupons();
+  //idadeMotorista();
+  //mesesDoAno();
+  //saquePix();
+  maioridadeDirecao();
+}
+
+void maioridadeDirecao() {
+  print("Digite sua idade: ");
+  int idade = int.parse(stdin.readLineSync()!);
+  print("País atual: ");
+  String? pais = stdin.readLineSync()!;
+
+  switch (pais) {
+    case "Brasil":
+      if (idade >= 18) {
+        print("Você está dentro da faixa etária permitida para dirigir.");
+      } else {
+        print("Você não possui idade mínima permitida para dirigir.");
+      }
+    break;
+
+    case "EUA":
+      if (idade >= 16) {
+        print("Você está dentro da faixa etária permitida para dirigir.");
+      } else {
+        print("Você não possui idade mínima permitida para dirigir.");
+      }
+    break;
+
+    case "Japão":
+      if (idade >= 20) {
+        print("Você está dentro da faixa etária permitida para dirigir.");
+      } else {
+        print("Você não possui idade mínima permitida para dirigir.");
+      }
+    break;
+  }
+}
+
+void saquePix() {
+  double saldo = 1000.0;
+  print('Boas-vindas ao seu banco digital!');
+  print('Seu saldo atual é de: R\$${saldo.toStringAsFixed(2)}');
+  print('Digite o valor do Pix que deseja realizar:');
+  double valorPix = double.parse(stdin.readLineSync()!);
+
+  if (valorPix <= saldo) {
+    saldo -= valorPix;
+    print("Saque efetuado com sucesso.");
+    print("Saldo atual: $saldo");
+  } else {
+    print("Saldo insuficiente!");
+  }
+}
+
+void mesesDoAno() {
+  print("Digite um número entre 1 e 12: ");
+  int numero = int.parse(stdin.readLineSync()!);
+
+  switch (numero) {
+    case 1:
+      print("Janeiro");
+    case 2:
+      print("Fevereiro");
+    case 3:
+      print("Março");
+    case 4:
+      print("Abril");
+    case 5:
+      print("Maio");
+    case 6:
+      print("Junho");
+    case 7:
+      print("Julho");
+    case 8:
+      print("Agosto");
+    case 9:
+      print("Setembro");
+    case 10:
+      print("Outubro");
+    case 11:
+      print("Novembro");
+    case 12:
+      print("Dezembro");
+    default:
+      print("Valor inválido!");
+  }
+}
+
+void idadeMotorista() {
+  print("Digite sua idade: ");
+  int idade = int.parse(stdin.readLineSync()!);
+
+  if (idade >= 18) {
+    print("Você está dentro da faixa etária permitida para dirigir.");
+  }
 }
 
 void dobro() {
