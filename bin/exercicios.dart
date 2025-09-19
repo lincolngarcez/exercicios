@@ -14,6 +14,111 @@ void main() {
   maioridadeDirecao();
 }
 
+void metodoPagamento() {
+  List<String> metodos = ["cartao", "boleto", "paypal", "pix"];
+  print("Método de pagamento $metodos: ");
+  String? metodoEscolhido = stdin.readLineSync();
+
+  if (metodos.contains(metodoEscolhido)) {
+    print("Método de pagamento selecionado: $metodoEscolhido.");
+  } else {
+    print("Método de pagamento inválido! Tente novamente.");
+    metodoPagamento();
+  }
+}
+
+void operacaoBancaria() {
+  List<String> operacoes = ["deposito","retirada","transferencia","pagamento"];
+  print("Digite uma operacao $operacoes: ");
+  String? operacao = stdin.readLineSync();
+
+  if (operacoes.contains(operacao)) {
+    switch (operacao) {
+      case "pagamento":
+        print("Digite o valor da operação: ");
+        double valorOperacao = double.parse(stdin.readLineSync()!);
+        print("Operação escolhida: $operacao, Valor: $valorOperacao");
+        break;
+    }
+  } else {
+    print("Operação inválida. Tente novamente.");
+    operacaoBancaria();
+  }
+}
+
+void numeroMes() {
+  print('Digite um número de 1 a 12 para saber o mês correspondente:');
+  String? input = stdin.readLineSync();
+  int? numero = int.tryParse(input ?? "");
+
+  switch (numero) {
+    case 1:
+      print("Janeiro");
+      break;
+    case 2:
+      print("Fevereiro");
+      break;
+    case 3:
+      print("Março");
+      break;
+    case 4:
+      print("Abril");
+      break;
+    case 5:
+      print("Maio");
+      break;
+    case 6:
+      print("Junho");
+      break;
+    case 7:
+      print("Julho");
+      break;
+    case 8:
+      print("Agosto");
+      break;
+    case 9:
+      print("Setembro");
+      break;
+    case 10:
+      print("Outubro");
+      break;
+    case 11:
+      print("Novembro");
+      break;
+    case 12:
+      print("Dezembro");
+      break;
+    default:
+      print("Número inválido. Por favor, insira um número de 1 a 12.");
+      numeroMes();
+  }
+}
+
+void tipoArquivoPermitido() {
+  List<String> listaTiposPermitidos = ["pdf", "jpg", "png", "docx", "xlsx"];
+  print("Digite o tipo do arquivo $listaTiposPermitidos");
+  String? tipoArquivo = stdin.readLineSync();
+
+  if (listaTiposPermitidos.contains(tipoArquivo)) {
+    print("Tipo de arquivo permitido: $tipoArquivo.");
+  } else {
+    print("Tipo de arquivo não permitido: $tipoArquivo.");
+    tipoArquivoPermitido();
+  }
+}
+
+void categoria() {
+  List<String> categorias = ["eletrônicos", "alimentos", "vestuário", "livros"];
+  print("Digite a categoria do produto $categorias: ");
+  String? categoria = stdin.readLineSync();
+
+  if (categorias.contains(categoria)) {
+    print("Categoria válida: $categoria.");
+  } else {
+    print("Categoria inválida: $categoria.");
+  }
+}
+
 void maioridadeDirecao() {
   print("Digite sua idade: ");
   int idade = int.parse(stdin.readLineSync()!);
