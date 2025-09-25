@@ -11,7 +11,37 @@ void main() {
   //idadeMotorista();
   //mesesDoAno();
   //saquePix();
-  maioridadeDirecao();
+  //maioridadeDirecao();
+  //imprimeNumero();
+  //mostrarNome();
+  buscaParada();
+}
+
+void buscaParada() {
+  String frase = "Parou! Este código não continua.";
+
+  for (var caractere in frase.split('')) {
+    print(caractere);
+
+    if (caractere.contains("!")) {
+      break;
+    }
+  }
+
+}
+
+void mostrarNome() {
+  List<String> nomes = <String>["Lincoln", "Louise", "Ana", "Izabelli", "Hendrick"];
+
+  for (int i = 0; i < nomes.length; i++) {
+    print(nomes[i]);
+  }
+}
+
+void imprimeNumero() {
+  for (int i=1; i <= 5; i++) {
+    print(i);
+  }
 }
 
 void metodoPagamento() {
